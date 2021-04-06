@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace API.Data.migrations
+namespace API.Data.Migrations
 {
     public partial class UserPasswordAdded : Migration
     {
@@ -10,13 +10,13 @@ namespace API.Data.migrations
             migrationBuilder.AddColumn<byte[]>(
                 name: "PasswordHash",
                 table: "Users",
-                type: "varbinary(max)",
+                type: "BLOB",
                 nullable: true);
 
             migrationBuilder.AddColumn<byte[]>(
                 name: "PasswordSalt",
                 table: "Users",
-                type: "varbinary(max)",
+                type: "BLOB",
                 nullable: true);
         }
 

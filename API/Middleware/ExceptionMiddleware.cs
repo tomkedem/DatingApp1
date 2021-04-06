@@ -9,13 +9,13 @@ using Microsoft.Extensions.Logging;
 
 namespace API.Middleware
 {
-    public class ExceptionMidleware
+    public class ExceptionMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly ILogger<ExceptionMidleware> _logger;
+        private readonly ILogger<ExceptionMiddleware> _logger;
         private readonly IHostEnvironment _env;
-        public ExceptionMidleware(RequestDelegate next, ILogger<ExceptionMidleware> logger,
-                     IHostEnvironment env)
+        public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger, 
+            IHostEnvironment env)
         {
             _env = env;
             _logger = logger;
@@ -28,7 +28,7 @@ namespace API.Middleware
             {
                 await _next(context);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
                 context.Response.ContentType = "application/json";

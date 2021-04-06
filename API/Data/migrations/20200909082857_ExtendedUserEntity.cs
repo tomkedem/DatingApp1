@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace API.Data.migrations
+namespace API.Data.Migrations
 {
     public partial class ExtendedUserEntity : Migration
     {
@@ -10,71 +10,71 @@ namespace API.Data.migrations
             migrationBuilder.AddColumn<string>(
                 name: "City",
                 table: "Users",
-                type: "nvarchar(max)",
+                type: "TEXT",
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Country",
                 table: "Users",
-                type: "nvarchar(max)",
+                type: "TEXT",
                 nullable: true);
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "Created",
                 table: "Users",
-                type: "datetime2",
+                type: "TEXT",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "DateOfBirth",
                 table: "Users",
-                type: "datetime2",
+                type: "TEXT",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<string>(
                 name: "Gender",
                 table: "Users",
-                type: "nvarchar(max)",
+                type: "TEXT",
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Interests",
                 table: "Users",
-                type: "nvarchar(max)",
+                type: "TEXT",
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Introduction",
                 table: "Users",
-                type: "nvarchar(max)",
+                type: "TEXT",
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "KnownAs",
                 table: "Users",
-                type: "nvarchar(max)",
+                type: "TEXT",
                 nullable: true);
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "LastActive",
                 table: "Users",
-                type: "datetime2",
+                type: "TEXT",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<string>(
                 name: "LookingFor",
                 table: "Users",
-                type: "nvarchar(max)",
+                type: "TEXT",
                 nullable: true);
 
             migrationBuilder.CreateTable(
                 name: "Photos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsMain = table.Column<bool>(type: "bit", nullable: false),
