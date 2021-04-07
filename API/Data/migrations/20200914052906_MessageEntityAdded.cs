@@ -11,17 +11,17 @@ namespace API.Data.Migrations
                 name: "Messages",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SenderId = table.Column<int>(type: "int", nullable: false),
-                    SenderUsername = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RecipientId = table.Column<int>(type: "int", nullable: false),
-                    RecipientUsername = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DateRead = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    MessageSent = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SenderDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    RecipientDeleted = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    SenderId = table.Column<int>(type: "INTEGER", nullable: false),
+                    SenderUsername = table.Column<string>(type: "TEXT", nullable: true),
+                    RecipientId = table.Column<int>(type: "INTEGER", nullable: false),
+                    RecipientUsername = table.Column<string>(type: "TEXT", nullable: true),
+                    Content = table.Column<string>(type: "TEXT", nullable: true),
+                    DateRead = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    MessageSent = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    SenderDeleted = table.Column<bool>(type: "INTEGER", nullable: false),
+                    RecipientDeleted = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
