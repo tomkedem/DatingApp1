@@ -15,7 +15,7 @@ import { User } from 'src/app/_models/user';
 })
 export class MemberListComponent implements OnInit {
   members: Member[];
-  Pagination: Pagination;
+  pagination: Pagination;
   userParams: UserParams;
   user: User;
   genderList = [{ value: 'male', display: 'Males' }, { value: 'female', display: 'Females' }];
@@ -32,7 +32,7 @@ export class MemberListComponent implements OnInit {
     this.memberService.setUserParams(this.userParams);
     this.memberService.getMembers(this.userParams).subscribe(response => {
       this.members = response.result;
-      this.Pagination = response.pagination;     
+      this.pagination = response.pagination;     
     })
   }
 
