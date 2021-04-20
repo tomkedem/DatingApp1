@@ -32,7 +32,7 @@ export class ConfirmService {
     return (observe) => {
       const subscription = this.BsModalRef.onHidden.subscribe(() => {
         observe.next(this.BsModalRef.content.result);
-        observe.complate();
+        observe.complete();
       });
 
       return { 
